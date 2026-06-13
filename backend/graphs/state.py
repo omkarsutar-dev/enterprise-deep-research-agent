@@ -16,3 +16,5 @@ class GraphState(TypedDict):
     critique: CriticOutput
 
     improved_answer: str
+
+    retry_count: int

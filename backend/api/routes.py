@@ -10,7 +10,8 @@ def chat(query: str):
 
     result = graph.invoke(
         {
-            "query": query
+            "query": query,
+            "retry_count": 0
         }
     )
 

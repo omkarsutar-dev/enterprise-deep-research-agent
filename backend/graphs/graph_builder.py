@@ -2,6 +2,8 @@ from langgraph.graph import StateGraph, END
 
 from backend.graphs.state import GraphState
 
+from backend.graphs.router import critic_router
+
 from backend.agents.planner_agent import planner_agent
 from backend.agents.research_agent import research_agent
 from backend.agents.critic_agent import critic_agent
@@ -44,9 +46,13 @@ builder.add_edge(
     "critic"
 )
 
-builder.add_edge(
+builder.add_conditional_edges(
     "critic",
-    "reflection"
+    critic_router,
+    {
+        "reflection": "reflection",
+        "end": END
+    }
 )
 
 builder.add_edge(
