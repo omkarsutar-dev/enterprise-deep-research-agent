@@ -11,7 +11,10 @@ User Query:
 Plan:
 {plan}
 
-Using the above plan, provide a detailed answer.
+Web Search Results:
+{search_results}
+
+Using the search results and plan, generate a comprehensive answer.
 
 Answer:
 """
