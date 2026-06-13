@@ -14,8 +14,8 @@ def chat(query: str):
         }
     )
 
-    # return result
+    return result
 
-    return {
-    "answer": result["improved_answer"]
-    }
+    # return {
+    # "answer": result["improved_answer"]
+    # }

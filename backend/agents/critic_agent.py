@@ -1,22 +1,24 @@
 from backend.prompts.critic_prompt import critic_prompt
 from backend.llms.openai_llm import llm
+from backend.models.critic_model import CriticOutput
+
+
+structured_llm = llm.with_structured_output(
+    CriticOutput
+)
 
 
 def critic_agent(state):
 
-    query = state["query"]
-
-    answer = state["answer"]
-
-    chain = critic_prompt | llm
+    chain = critic_prompt | structured_llm
 
     response = chain.invoke(
         {
-            "query": query,
-            "answer": answer
+            "query": state["query"],
+            "answer": state["answer"]
         }
     )
 
     return {
-        "critique": response.content
+        "critique": response
     }
