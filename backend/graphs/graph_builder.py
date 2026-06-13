@@ -5,6 +5,7 @@ from backend.graphs.state import GraphState
 from backend.agents.planner_agent import planner_agent
 from backend.agents.research_agent import research_agent
 from backend.agents.critic_agent import critic_agent
+from backend.agents.reflection_agent import reflection_agent
 
 
 builder = StateGraph(GraphState)
@@ -24,6 +25,11 @@ builder.add_node(
     critic_agent
 )
 
+builder.add_node(
+    "reflection",
+    reflection_agent
+)
+
 builder.set_entry_point(
     "planner"
 )
@@ -40,6 +46,11 @@ builder.add_edge(
 
 builder.add_edge(
     "critic",
+    "reflection"
+)
+
+builder.add_edge(
+    "reflection",
     END
 )
 

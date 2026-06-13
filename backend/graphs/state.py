@@ -12,3 +12,5 @@ class GraphState(TypedDict):
     answer: str
 
     critique: str
+
+    improved_answer: str
