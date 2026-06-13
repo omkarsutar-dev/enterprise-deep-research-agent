@@ -6,3 +6,5 @@ langgraph
 langchain-openai
 python-dotenv
 pydantic
+python-dotenv
+openai

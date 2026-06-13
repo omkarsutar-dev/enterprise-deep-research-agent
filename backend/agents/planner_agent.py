@@ -1,13 +1,19 @@
+from backend.prompts.planner_prompt import planner_prompt
+from backend.llms.openai_llm import llm
+
+
 def planner_agent(state):
 
     query = state["query"]
 
-    plan = (
-    "1. Understand the query.\n"
-    "2. Gather information.\n"
-    "3. Produce final response.\n\n"
-    f"User Query:\n{query}")
+    chain = planner_prompt | llm
+
+    response = chain.invoke(
+        {
+            "query": query
+        }
+    )
 
     return {
-        "plan": plan
+        "plan": response.content
     }

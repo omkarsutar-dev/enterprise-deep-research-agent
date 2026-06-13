@@ -17,9 +17,7 @@ builder.add_node(
     research_agent
 )
 
-builder.set_entry_point(
-    "planner"
-)
+builder.set_entry_point("planner")
 
 builder.add_edge(
     "planner",
