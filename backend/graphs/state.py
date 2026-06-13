@@ -10,6 +10,8 @@ class GraphState(TypedDict):
 
     chat_history: list
 
+    long_term_memory: dict
+
     plan: list
 
     search_results: list

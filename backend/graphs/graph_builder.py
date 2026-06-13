@@ -10,6 +10,7 @@ from backend.agents.critic_agent import critic_agent
 from backend.agents.reflection_agent import reflection_agent
 from backend.agents.memory_agent import memory_agent
 from backend.agents.update_memory_agent import update_memory_agent
+from backend.agents.update_long_term_memory_agent import update_long_term_memory_agent
 
 
 builder = StateGraph(GraphState)
@@ -44,13 +45,14 @@ builder.add_node(
     update_memory_agent
 )
 
+builder.add_node(
+    "update_long_term_memory",
+    update_long_term_memory_agent
+)
+
 builder.set_entry_point(
     "memory"
 )
-
-# builder.set_entry_point(
-#     "planner"
-# )
 
 builder.add_edge(
     "memory",
@@ -83,6 +85,11 @@ builder.add_edge(
 
 builder.add_edge(
     "update_memory",
+    "update_long_term_memory"
+)
+
+builder.add_edge(
+    "update_long_term_memory",
     END
 )
 

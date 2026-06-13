@@ -15,7 +15,8 @@ def planner_agent(state):
     response = chain.invoke(
         {
             "query": state["query"],
-            "chat_history": state["chat_history"]
+            "chat_history": state["chat_history"],
+            "long_term_memory": state["long_term_memory"]
         }
     )
 
