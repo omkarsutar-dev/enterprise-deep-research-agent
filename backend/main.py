@@ -1,12 +1,10 @@
 from fastapi import FastAPI
 
+from backend.api.routes import router
+
+
 app = FastAPI(
     title="Enterprise Deep Research Agent"
 )
 
-
-@app.get("/")
-def health_check():
-    return {
-        "status": "running"
-    }
+app.include_router(router)
