@@ -57,7 +57,7 @@ builder.add_conditional_edges(
 
 builder.add_edge(
     "reflection",
-    END
+    "research"
 )
 
 graph = builder.compile()

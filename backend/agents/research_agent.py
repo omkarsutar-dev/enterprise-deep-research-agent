@@ -6,7 +6,13 @@ from backend.tools.tavily_tool import tavily_search
 def research_agent(state):
 
     query = state["query"]
+
     plan = state["plan"]
+
+    previous_answer = state.get(
+        "improved_answer",
+        ""
+    )
 
     search_results = tavily_search(
         query
@@ -18,7 +24,8 @@ def research_agent(state):
         {
             "query": query,
             "plan": plan,
-            "search_results": search_results
+            "search_results": search_results,
+            "previous_answer": previous_answer
         }
     )
 

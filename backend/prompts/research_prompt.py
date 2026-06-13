@@ -11,10 +11,15 @@ User Query:
 Plan:
 {plan}
 
-Web Search Results:
+Search Results:
 {search_results}
 
-Using the search results and plan, generate a comprehensive answer.
+Previous Answer:
+{previous_answer}
+
+If a previous answer exists, improve it.
+
+Generate a complete answer.
 
 Answer:
 """

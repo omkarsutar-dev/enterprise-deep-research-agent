@@ -1,5 +1,4 @@
 from typing import TypedDict
-
 from backend.models.critic_model import CriticOutput
 
 

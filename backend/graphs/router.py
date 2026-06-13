@@ -1,15 +1,20 @@
-from backend.models.critic_model import CriticOutput
+MAX_RETRIES = 2
 
 
 def critic_router(state):
 
-    critique: CriticOutput = state["critique"]
+    score = state["critique"].score
 
-    score = critique.score
+    retry_count = state["retry_count"]
 
-    print(f"Critic Score: {score}")
+    print(
+        f"Score={score}, Retry={retry_count}"
+    )
 
-    if score < 8:
-        return "reflection"
+    if score >= 8:
+        return "end"
 
-    return "end"
+    if retry_count >= MAX_RETRIES:
+        return "end"
+
+    return "reflection"
