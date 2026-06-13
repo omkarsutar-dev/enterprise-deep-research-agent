@@ -10,3 +10,5 @@ class GraphState(TypedDict):
     search_results: list
 
     answer: str
+
+    critique: str
