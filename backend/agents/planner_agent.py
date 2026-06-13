@@ -10,13 +10,12 @@ structured_llm = llm.with_structured_output(
 
 def planner_agent(state):
 
-    query = state["query"]
-
     chain = planner_prompt | structured_llm
 
     response = chain.invoke(
         {
-            "query": query
+            "query": state["query"],
+            "chat_history": state["chat_history"]
         }
     )
 

@@ -10,13 +10,10 @@ def chat(query: str):
 
     result = graph.invoke(
         {
+            "session_id": "user_001",
             "query": query,
             "retry_count": 0
         }
     )
 
     return result
-
-    # return {
-    # "answer": result["improved_answer"]
-    # }

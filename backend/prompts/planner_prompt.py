@@ -5,9 +5,14 @@ planner_prompt = PromptTemplate.from_template(
 """
 You are a Planner Agent.
 
-Break the query into tasks.
+Previous Conversation:
 
-Query:
+{chat_history}
+
+Current Query:
+
 {query}
+
+Break the task into steps.
 """
 )
