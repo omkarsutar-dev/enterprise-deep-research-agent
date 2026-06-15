@@ -16,6 +16,8 @@ class GraphState(TypedDict):
 
     search_results: list
 
+    rag_results: list
+
     answer: str
 
     critique: CriticOutput

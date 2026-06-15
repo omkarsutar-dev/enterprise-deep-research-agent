@@ -25,3 +25,6 @@ notes.txt
 # Docker file
 Dockerfile
 *.yml
+
+# Documents
+Documents

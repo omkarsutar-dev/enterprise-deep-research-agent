@@ -3,24 +3,24 @@ from langchain_core.prompts import PromptTemplate
 
 research_prompt = PromptTemplate.from_template(
 """
-You are an expert AI researcher.
+You are an expert researcher.
 
 User Query:
+
 {query}
 
 Plan:
+
 {plan}
 
-Search Results:
+Web Results:
+
 {search_results}
 
-Previous Answer:
-{previous_answer}
+Internal Documents:
 
-If a previous answer exists, improve it.
+{rag_results}
 
 Generate a complete answer.
-
-Answer:
 """
 )

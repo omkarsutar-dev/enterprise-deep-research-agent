@@ -9,3 +9,6 @@ pydantic
 python-dotenv
 openai
 tavily-python
+chromadb
+pypdf
+langchain-community
